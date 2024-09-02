@@ -1,0 +1,15 @@
+C:\Users\TIVIopiskelija\Documents\GitHub\Portfolio\Diary\bin\Debug\net8.0\Diary.exe
+C:\Users\TIVIopiskelija\Documents\GitHub\Portfolio\Diary\bin\Debug\net8.0\Diary.deps.json
+C:\Users\TIVIopiskelija\Documents\GitHub\Portfolio\Diary\bin\Debug\net8.0\Diary.runtimeconfig.json
+C:\Users\TIVIopiskelija\Documents\GitHub\Portfolio\Diary\bin\Debug\net8.0\Diary.dll
+C:\Users\TIVIopiskelija\Documents\GitHub\Portfolio\Diary\bin\Debug\net8.0\Diary.pdb
+C:\Users\TIVIopiskelija\Documents\GitHub\Portfolio\Diary\obj\Debug\net8.0\Diary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\TIVIopiskelija\Documents\GitHub\Portfolio\Diary\obj\Debug\net8.0\Diary.AssemblyInfoInputs.cache
+C:\Users\TIVIopiskelija\Documents\GitHub\Portfolio\Diary\obj\Debug\net8.0\Diary.AssemblyInfo.cs
+C:\Users\TIVIopiskelija\Documents\GitHub\Portfolio\Diary\obj\Debug\net8.0\Diary.csproj.CoreCompileInputs.cache
+C:\Users\TIVIopiskelija\Documents\GitHub\Portfolio\Diary\obj\Debug\net8.0\Diary.sourcelink.json
+C:\Users\TIVIopiskelija\Documents\GitHub\Portfolio\Diary\obj\Debug\net8.0\Diary.dll
+C:\Users\TIVIopiskelija\Documents\GitHub\Portfolio\Diary\obj\Debug\net8.0\refint\Diary.dll
+C:\Users\TIVIopiskelija\Documents\GitHub\Portfolio\Diary\obj\Debug\net8.0\Diary.pdb
+C:\Users\TIVIopiskelija\Documents\GitHub\Portfolio\Diary\obj\Debug\net8.0\Diary.genruntimeconfig.cache
+C:\Users\TIVIopiskelija\Documents\GitHub\Portfolio\Diary\obj\Debug\net8.0\ref\Diary.dll
