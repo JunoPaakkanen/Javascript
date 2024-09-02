@@ -5,10 +5,9 @@ class Program {
     // Main Method
     public static void Main(String[] args)
     {
-        var newTitle = "";
-        var newContent = "";
         
         DiaryEntry? nextEntry = null;
+        int entryCounter = 0;
         bool inOptionsMenu = true;
         while (inOptionsMenu == true)
         {
@@ -17,20 +16,14 @@ class Program {
         
             if (answer == "New entry")
             {
+                string entryName = "Diary" + entryCounter;
                 nextEntry = CreateNewEntry();
+                entryCounter += 1;
             }
 
         }
 
-        DiaryEntry diaryEntry1 = new DiaryEntry(newTitle, newContent);
-        DiaryEntry diaryEntry2 = new DiaryEntry("Title 2", "Sussy baka");
-
-
-        diaryEntry1.Test();
-        diaryEntry2.Test();
         nextEntry?.Test();
-        
-        
     }
 
     public static DiaryEntry CreateNewEntry()
@@ -52,6 +45,7 @@ class Program {
 
 public class DiaryEntry
 {
+    
     public string Date { get; set;}
 
     public string Title { get; set;}
