@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Diary")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+497bef7c972d9d14ae3e5ac7b1c1c08b8d8a958d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5fc1dc2a59979a4afa6219297ea5091677aca797")]
 [assembly: System.Reflection.AssemblyProductAttribute("Diary")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Diary")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

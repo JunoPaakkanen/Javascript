@@ -1,4 +1,5 @@
-﻿using System; 
+﻿using System;
+using System.Security.Cryptography;
 
 class Program {
 
@@ -7,23 +8,54 @@ class Program {
     {
         
         DiaryEntry? nextEntry = null;
-        int entryCounter = 0;
         bool inOptionsMenu = true;
+
+        Dictionary<string, DiaryEntry> Entries = new Dictionary<string, DiaryEntry>();
+        int entryCount = 0;
+
         while (inOptionsMenu == true)
         {
-            Console.WriteLine("What would you like to do?\nYour options are:\n1. Create a new diary entry by typing \"New entry\"");
+            Console.WriteLine("What would you like to do?\nYour options are:\n1. Create a new diary entry by typing \"New entry\"\n2. Find a specific entry by typing \"Find entry\"\n3. Exit by typing \"Exit\"");
             var answer = Console.ReadLine();
-        
+            var goBack = "";
+            bool continuing = false;
             if (answer == "New entry")
             {
-                string entryName = "Diary" + entryCounter;
+                entryCount++;
+                string entryName = "Entry" + entryCount;
                 nextEntry = CreateNewEntry();
-                entryCounter += 1;
+                Entries.Add(entryName, nextEntry);
+                Console.WriteLine("Created new entry with name: " + entryName);
+            }
+            if (answer == "Find entry")
+            {
+                while (continuing == true)
+                {
+                    Console.WriteLine("Write the name of the entry you would like to read. (In the format: \"Entry1\")");
+                    var entrySearch = Console.ReadLine();
+                    if (entrySearch != null)
+                    {
+                        Entries[entrySearch]?.Test();
+                        Console.WriteLine("Would you like to continue searching or go back? Type either \"Continue\" or \"Back\"");
+                        goBack = Console.ReadLine();
+                        if (goBack == "Continue")
+                        {
+                            continuing = true;
+                        }
+                        else if (goBack == "Back")
+                        {
+                            continuing = false;
+                        }
+                    }
+                }
+            }
+            
+            if (answer == "Exit")
+            {
+                inOptionsMenu = false;
             }
 
         }
-
-        nextEntry?.Test();
     }
 
     public static DiaryEntry CreateNewEntry()
