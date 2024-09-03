@@ -9,7 +9,6 @@ class Program {
         
         DiaryEntry? nextEntry = null;
         bool inOptionsMenu = true;
-        string poistettu = "poistettu";
 
         Dictionary<string, DiaryEntry> Entries = new Dictionary<string, DiaryEntry>();
         int entryCount = 0;
@@ -17,9 +16,9 @@ class Program {
         while (inOptionsMenu == true)
         {
             Console.WriteLine("What would you like to do?\nYour options are:\n1. Create a new diary entry by typing \"New entry\"\n2. Find a specific entry by typing \"Find entry\"");
-            Console.WriteLine("3. Delete an entry by typing \"Delete entry\"\n4. Exit by typing \"Exit\"");
+            Console.WriteLine("3. Exit by typing \"Exit\"");
             var answer = Console.ReadLine();
-            var goBack = "";
+            var answerInEntryViewer = "";
             bool continuing = false;
             if (answer == "New entry")
             {
@@ -40,23 +39,30 @@ class Program {
                     {
                         Entries[entrySearch]?.ShowEntry();
                         Console.WriteLine("Would you like to continue searching or go back? Type either \"Continue\" or \"Back\"");
-                        goBack = Console.ReadLine();
-                        if (goBack == "Continue")
+                        if (Entries[entrySearch].Deleted == false)
+                        {
+                            Console.WriteLine("You can also edit this entry by typing \"Edit\"");
+                            Console.WriteLine("Or even delete it by typing \"Delete\"");
+                        }
+                        answerInEntryViewer = Console.ReadLine();
+                        if (answerInEntryViewer == "Continue")
                         {
                             continuing = true;
                         }
-                        else if (goBack == "Back")
+                        else if (answerInEntryViewer == "Delete" & Entries[entrySearch].Deleted == false)
+                            {
+                                Entries[entrySearch].DeleteEntry();
+                                Console.WriteLine("Entry has been deleted!");
+                                continuing = false;
+                            }
+                        else if (answerInEntryViewer == "Back")
                         {
                             continuing = false;
                         }
+
                     }
                 }
             }
-            if (answer == "Delete entry")
-            {
-                
-            }
-
 
             if (answer == "Exit")
             {
@@ -92,12 +98,17 @@ public class DiaryEntry
 
     public string Content { get; set;}
 
+    public bool Deleted { get; set;}
+
 
     public DiaryEntry(string title, string content)
     {
         DateTime currentDateTime = DateTime.Now;
         string dateWithFormat = currentDateTime.ToLongDateString();
         Date = dateWithFormat;
+
+        bool deleted = false;
+        Deleted = deleted;
 
         Title = title;
         Content = content;
@@ -108,6 +119,13 @@ public class DiaryEntry
         Console.WriteLine(Date);
         Console.WriteLine(Title);
         Console.WriteLine(Content);
+    }
+
+    public void DeleteEntry()
+    {
+        Date = "Deleted";
+        Title = "Deleted";
+        Content = "Deleted";
     }
 }
 
