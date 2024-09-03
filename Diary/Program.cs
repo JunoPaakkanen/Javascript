@@ -9,13 +9,15 @@ class Program {
         
         DiaryEntry? nextEntry = null;
         bool inOptionsMenu = true;
+        string poistettu = "poistettu";
 
         Dictionary<string, DiaryEntry> Entries = new Dictionary<string, DiaryEntry>();
         int entryCount = 0;
 
         while (inOptionsMenu == true)
         {
-            Console.WriteLine("What would you like to do?\nYour options are:\n1. Create a new diary entry by typing \"New entry\"\n2. Find a specific entry by typing \"Find entry\"\n3. Exit by typing \"Exit\"");
+            Console.WriteLine("What would you like to do?\nYour options are:\n1. Create a new diary entry by typing \"New entry\"\n2. Find a specific entry by typing \"Find entry\"");
+            Console.WriteLine("3. Delete an entry by typing \"Delete entry\"\n4. Exit by typing \"Exit\"");
             var answer = Console.ReadLine();
             var goBack = "";
             bool continuing = false;
@@ -25,17 +27,18 @@ class Program {
                 string entryName = "Entry" + entryCount;
                 nextEntry = CreateNewEntry();
                 Entries.Add(entryName, nextEntry);
-                Console.WriteLine("Created new entry with name: " + entryName);
+                Console.WriteLine("Created new entry with the name: " + entryName);
             }
             if (answer == "Find entry")
             {
+                continuing = true;
                 while (continuing == true)
                 {
                     Console.WriteLine("Write the name of the entry you would like to read. (In the format: \"Entry1\")");
                     var entrySearch = Console.ReadLine();
                     if (entrySearch != null)
                     {
-                        Entries[entrySearch]?.Test();
+                        Entries[entrySearch]?.ShowEntry();
                         Console.WriteLine("Would you like to continue searching or go back? Type either \"Continue\" or \"Back\"");
                         goBack = Console.ReadLine();
                         if (goBack == "Continue")
@@ -49,7 +52,12 @@ class Program {
                     }
                 }
             }
-            
+            if (answer == "Delete entry")
+            {
+                
+            }
+
+
             if (answer == "Exit")
             {
                 inOptionsMenu = false;
@@ -95,9 +103,11 @@ public class DiaryEntry
         Content = content;
     }
 
-    public void Test()
+    public void ShowEntry()
     {
-        Console.WriteLine(Date + Title + Content);
+        Console.WriteLine(Date);
+        Console.WriteLine(Title);
+        Console.WriteLine(Content);
     }
 }
 
